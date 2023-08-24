@@ -856,12 +856,12 @@ resource managementSecurityGroup 'Microsoft.Network/networkSecurityGroups@2023-0
 // Service plan
 
 resource hostplan 'Microsoft.Web/serverfarms@2022-09-01' = {
-  name: 'registerangryhippo'
+  name: 'test2814'
   kind: 'elastic'
   location: location
   properties: {
     // serverFarmId: 14883
-    // name: 'registerangryhippo'
+    // name: 'test2814'
     // workerSize: 'D1'
     // workerSizeId: 3
     // currentWorkerSize: 'D1'
@@ -894,12 +894,12 @@ resource hostplan 'Microsoft.Web/serverfarms@2022-09-01' = {
 
 // Storage account
 
-resource registerangryhippoStorage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
+resource test2814Storage 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   sku: {
     name: 'Standard_LRS'
   }
   kind: 'StorageV2'
-  name: 'registerangryhippo'
+  name: 'test2814'
   location: location
   tags: {}
   properties: {
@@ -931,8 +931,8 @@ resource registerangryhippoStorage 'Microsoft.Storage/storageAccounts@2022-09-01
 
 // Insights
 
-resource registerangryhippoMonitoring 'Microsoft.Insights/components@2020-02-02' = {
-  name: 'registerangryhippo'
+resource test2814Monitoring 'Microsoft.Insights/components@2020-02-02' = {
+  name: 'test2814'
   location: location
   tags: {}
   kind: 'web'
@@ -1002,12 +1002,12 @@ resource scaling 'Microsoft.EventGrid/eventSubscriptions@2023-06-01-preview' = {
   name: 'scaling'
 }
 
-resource registerangryhippo 'Microsoft.Web/sites@2022-09-01' = {
-  name: 'registerangryhippo'
+resource test2814 'Microsoft.Web/sites@2022-09-01' = {
+  name: 'test2814'
   kind: 'functionapp,linux,container,azurecontainerapps'
   location: location
   properties: {
-    // name: 'registerangryhippo'
+    // name: 'test2814'
     // webSpace: '64e7982ed98384de391cfad3e94d0efd4660b324261577e2ed054464a6d968e9'
     // contentAvailabilityState: 'Normal'
     // runtimeAvailabilityState: 'Normal'
@@ -1016,11 +1016,11 @@ resource registerangryhippo 'Microsoft.Web/sites@2022-09-01' = {
       functionAppScaleLimit: 30
       minimumElasticInstanceCount: 0
     }
-    // deploymentId: 'registerangryhippo'
+    // deploymentId: 'test2814'
     // kind: 'functionapp,linux,container,azurecontainerapps'
-    managedEnvironmentId: registerangryhippoManagedEnv.id
+    managedEnvironmentId: test2814ManagedEnv.id
     // tags: {
-    //   'hidden-link: /app-insights-resource-id': '/subscriptions/93004638-8c6b-4e33-ba58-946afd57efdf/resourceGroups/mbright-bicep-test/providers/microsoft.insights/components/registerangryhippo'
+    //   'hidden-link: /app-insights-resource-id': '/subscriptions/93004638-8c6b-4e33-ba58-946afd57efdf/resourceGroups/mbright-bicep-test/providers/microsoft.insights/components/test2814'
     //   'hidden-link: /app-insights-instrumentation-key': 'b32a8026-6079-400f-a315-d68a3b4a4aad'
     //   'hidden-link: /app-insights-conn-string': 'InstrumentationKey=b32a8026-6079-400f-a315-d68a3b4a4aad;IngestionEndpoint=https://eastus2-4.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/'
     // }
@@ -1033,15 +1033,15 @@ resource registerangryhippo 'Microsoft.Web/sites@2022-09-01' = {
 }
 
 resource applianceregistration 'Microsoft.Web/sites/functions@2022-09-01' = {
-  parent: registerangryhippo
+  parent: test2814
   name: 'applianceregistration'
   properties: {
     // name: 'applianceregistration'
-    // script_root_path_href: 'http://registerangryhippo.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/'
-    // script_href: 'http://registerangryhippo.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/__init__.py'
-    // config_href: 'http://registerangryhippo.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/function.json'
-    // test_data_href: 'http://registerangryhippo.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/tmp/FunctionsData/applianceregistration.dat'
-    // href: 'http://registerangryhippo.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/functions/applianceregistration'
+    // script_root_path_href: 'http://test2814.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/'
+    // script_href: 'http://test2814.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/__init__.py'
+    // config_href: 'http://test2814.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/home/site/wwwroot/applianceregistration/function.json'
+    // test_data_href: 'http://test2814.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/vfs/tmp/FunctionsData/applianceregistration.dat'
+    // href: 'http://test2814.graybay-04fc09de.eastus2.azurecontainerapps.io/admin/functions/applianceregistration'
     config: {
       scriptFile: '__init__.py'
       bindings: [
@@ -1058,8 +1058,8 @@ resource applianceregistration 'Microsoft.Web/sites/functions@2022-09-01' = {
   }
 }
 
-resource registerangryhippoManagedEnv 'Microsoft.App/managedEnvironments@2023-05-01' = {
-  name: 'registerangryhippo'
+resource test2814ManagedEnv 'Microsoft.App/managedEnvironments@2023-05-01' = {
+  name: 'test2814'
   location: location
   properties: {
     // appLogsConfiguration: {
