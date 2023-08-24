@@ -7,7 +7,7 @@ set -x
 # shellcheck disable=SC2034
 location="eastus2"
 resource_group="mbright-bicep-test"
-app_name="registerangryhippo"
+app_name="test2814"
 storage_name="$app_name"
 zip_file="function_app.zip"
 #plan_name="$app_name"
