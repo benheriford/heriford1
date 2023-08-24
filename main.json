@@ -570,7 +570,7 @@
     {
       "type": "Microsoft.Web/serverfarms",
       "apiVersion": "2022-09-01",
-      "name": "registerangryhippo",
+      "name": "test2814",
       "kind": "elastic",
       "location": "[parameters('location')]",
       "properties": {
@@ -596,7 +596,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2022-09-01",
-      "name": "registerangryhippo",
+      "name": "test2814",
       "sku": {
         "name": "Standard_LRS"
       },
@@ -632,7 +632,7 @@
     {
       "type": "Microsoft.Insights/components",
       "apiVersion": "2020-02-02",
-      "name": "registerangryhippo",
+      "name": "test2814",
       "location": "[parameters('location')]",
       "tags": {},
       "kind": "web",
@@ -666,7 +666,7 @@
       "properties": {
         "destination": {
           "properties": {
-            "resourceId": "[resourceId('Microsoft.Web/sites/functions', 'registerangryhippo', 'applianceregistration')]",
+            "resourceId": "[resourceId('Microsoft.Web/sites/functions', 'test2814', 'applianceregistration')]",
             "maxEventsPerBatch": 1,
             "preferredBatchSizeInKilobytes": 64
           },
@@ -698,13 +698,13 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Web/sites/functions', 'registerangryhippo', 'applianceregistration')]"
+        "[resourceId('Microsoft.Web/sites/functions', 'test2814', 'applianceregistration')]"
       ]
     },
     {
       "type": "Microsoft.Web/sites",
       "apiVersion": "2022-09-01",
-      "name": "registerangryhippo",
+      "name": "test2814",
       "kind": "functionapp,linux,container,azurecontainerapps",
       "location": "[parameters('location')]",
       "properties": {
@@ -713,20 +713,20 @@
           "functionAppScaleLimit": 30,
           "minimumElasticInstanceCount": 0
         },
-        "managedEnvironmentId": "[resourceId('Microsoft.App/managedEnvironments', 'registerangryhippo')]",
+        "managedEnvironmentId": "[resourceId('Microsoft.App/managedEnvironments', 'test2814')]",
         "storageAccountRequired": false
       },
       "identity": {
         "type": "None"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.App/managedEnvironments', 'registerangryhippo')]"
+        "[resourceId('Microsoft.App/managedEnvironments', 'test2814')]"
       ]
     },
     {
       "type": "Microsoft.Web/sites/functions",
       "apiVersion": "2022-09-01",
-      "name": "[format('{0}/{1}', 'registerangryhippo', 'applianceregistration')]",
+      "name": "[format('{0}/{1}', 'test2814', 'applianceregistration')]",
       "properties": {
         "config": {
           "scriptFile": "__init__.py",
@@ -742,13 +742,13 @@
         "isDisabled": false
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Web/sites', 'registerangryhippo')]"
+        "[resourceId('Microsoft.Web/sites', 'test2814')]"
       ]
     },
     {
       "type": "Microsoft.App/managedEnvironments",
       "apiVersion": "2023-05-01",
-      "name": "registerangryhippo",
+      "name": "test2814",
       "location": "[parameters('location')]",
       "properties": {
         "zoneRedundant": false
