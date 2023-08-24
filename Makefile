@@ -2,7 +2,7 @@ default := all
 dockerid := mbrightcpacket
 dockerimage := registerappliances
 dockerversion := 0.0.2
-azurefunction := registerangryhippo
+azurefunction := test2814
 resourcegroup := mbright-bicep-test
 
 .PHONY: all
