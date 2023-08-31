@@ -297,7 +297,7 @@
                         "toolTip": "This scale set (VMSS) holds the VMs that handle traffic from the Load balancer.",
                         "defaultValue": "[concat(basics('generalSection').deploymentId,'-scaleset')]",
                         "constraints": {
-                            "required": false,
+                            "required": true,
                             "regex": "^[a-z0-9A-Z-]{3,79}$",
                             "validationMessage": "The name must be between 3 and 79 characters long and contain letters, numbers and hyphens only."
                         }
